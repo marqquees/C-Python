@@ -19,7 +19,7 @@ int main()
     printf("\nOpcao: ");
     scanf("%d", &op);
 
-    while (op != 1 && op != 2)
+    while (op < 1 || op > 2)
     {
         printf("\nDigite uma opcao valida (1 ou 2).\nDigite outro numero: ");
         scanf("%d", &op);
