@@ -39,20 +39,18 @@ int main()
         printf("\n");
     }
     
-    //Calcula a média ponderada.
     media_ponderada(tamanho_vetor_nome_aluno, numero_nota, nome_aluno, nota_aluno);
     return 0;
 }
 
 void media_ponderada(int tamanho_vetor_nome_aluno, float numero_nota, char nome_aluno[][10], float nota_aluno[][3])
 {
+    //Calcula a média ponderada.
     for (int linha = 0; linha < tamanho_vetor_nome_aluno; linha++)
     {
         float media_ponderada = 0;
         for (int coluna = 0; coluna < numero_nota; coluna++)
-        {
             media_ponderada += nota_aluno[linha][coluna] * peso[coluna];
-        }
         printf("\nThe weighted average of student %s is %.2f", nome_aluno[linha], media_ponderada);
     }
 }

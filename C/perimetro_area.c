@@ -45,13 +45,9 @@ int main()
             scanf("%f", &raio);
             printf("\nArea: %.3f", area(raio));
             break;
-        //default:
-            //break;
     }
-
     return 0;
 }
-
 
 void menu(void)
 {

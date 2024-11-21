@@ -9,9 +9,7 @@ int main()
     for (linha = 0; linha < len; linha++)
     {
         for (coluna = 0; coluna < len; coluna++)
-        {
             printf("%d", matriz[linha][coluna]);
-        }
         printf("\n");
     }  
     return 0;

@@ -1,10 +1,12 @@
 #include <stdio.h>
 
+float maior_numero(float numero[], int tamanho_vetor);
+
 int main()
 {
     printf("MAIOR NUMERO\n\n");
 
-    float numero[5], maior;
+    float numero[5];
     char nomes_numero[5][10] = {"primeiro","segundo","terceiro","quarto","quinto"};
     int tamanho_vetor = sizeof(numero) / sizeof(numero[0]);
 
@@ -14,14 +16,19 @@ int main()
         scanf("%f", &numero[i]);
     }
 
+    printf("\nMaior Numero: %.1f", maior_numero(numero, tamanho_vetor));
+
+    return 0;
+}
+
+float maior_numero(float numero[], int tamanho_vetor)
+{
     //calcula o maior número
-    maior = numero[0];
-    for (int i = 1; i < 5; i++)
+    int maior = numero[0];
+    for (int i = 1; i < tamanho_vetor; i++)
     {
         if (numero[i] > maior)
             maior = numero[i];
     }
-    printf("\nMaior Numero: %.2f", maior);
-
-    return 0;
+    return maior;
 }

@@ -4,11 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int numero_letra(char *palavra)
-{
-    int n_letra = strlen(palavra);
-    return n_letra;
-}
+int numero_letra(char *palavra);
 
 int main()
 {
@@ -21,4 +17,10 @@ int main()
 
     printf("\nA palavra %s tem %d letras.", palavra, numero_letra(palavra));
     return 0;
+}
+
+int numero_letra(char *palavra)
+{
+    int n_letra = strlen(palavra);
+    return n_letra;
 }

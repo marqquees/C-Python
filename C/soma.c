@@ -6,7 +6,7 @@ int main()
 {
     printf("SOMA DE TRES NUMEROS\n\n");
 
-    float number[3], resultado;
+    float number[3];
     char names_number[3][10] = {"primeiro", "segundo", "terceiro"};
     int tamanho_vetor = sizeof(number) / sizeof(number[0]); 
     

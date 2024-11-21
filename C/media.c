@@ -15,12 +15,10 @@ int main()
 
     resultado = media(number1, number2);
 
-    //aqui faz o cálculo da média
     if (resultado >= 10)
         printf("\nAPROVADO");
     else
         printf("\nREPROVADO");
-
     return 0;
 }
 

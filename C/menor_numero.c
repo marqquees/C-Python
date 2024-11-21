@@ -1,15 +1,12 @@
 #include <stdio.h>
 
-float menor_numero(float menor, * numero)
-{
-
-}
+float menor_numero(float numero[], int tamanho_vetor);
 
 int main()
 {
     printf("MENOR NUMERO\n\n");
 
-    float numero[5], menor;
+    float numero[5];
     char nomes_numero[5][10] = {"primeiro","segundo","terceiro","quarto","quinto"};
     int tamanho_vetor = sizeof(numero) / sizeof(numero[0]);
 
@@ -19,17 +16,19 @@ int main()
         scanf("%f", &numero[i]);
     }
 
-    //calcula o menor número
-    printf("\nMenor Numero: %.2f", menor_numero(numero));
+    printf("\nMenor numero: %.1f", menor_numero(numero, tamanho_vetor));
     
+    return 0;
+}
 
-    menor = numero[0];
-    for (int i = 1; i < 5; i++)
+float menor_numero(float numero[], int tamanho_vetor)
+{
+    //calcula o menor número.
+    int menor = numero[0];
+    for (int i = 1; i < tamanho_vetor; i++)
     {
-        if (numero[i] > menor)
+        if (numero[i] < menor)
             menor = numero[i];
     }
-    printf("\nMaior Numero: %.2f", menor);
-
-    return 0;
+    return menor;
 }

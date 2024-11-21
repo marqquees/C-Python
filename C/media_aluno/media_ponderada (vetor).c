@@ -8,6 +8,7 @@ programa deve escrever a média para o ecrã.
 const float peso[3] = {0.4, 0.4, 0.2};
 
 float media_ponderada(int tamanho_vetor, float nota_aluno[]);
+
 int main()
 {
     printf("WEIGHTED AVERAGE\n\n");
@@ -32,8 +33,6 @@ float media_ponderada(int tamanho_vetor, float nota_aluno[])
 {
     float media_ponderada = 0;
     for (int  i = 0; i < tamanho_vetor; i++)
-    {
         media_ponderada += nota_aluno[i] * peso[i];
-    }
     return media_ponderada;
 }
