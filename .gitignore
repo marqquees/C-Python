@@ -1,0 +1,3 @@
+# Ignorar todos os arquivos executáveis.
+*.txt
+*.exe
