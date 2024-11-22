@@ -24,7 +24,7 @@ int main()
 float maior_numero(float numero[], int tamanho_vetor)
 {
     //calcula o maior número
-    int maior = numero[0];
+    float maior = numero[0];
     for (int i = 1; i < tamanho_vetor; i++)
     {
         if (numero[i] > maior)

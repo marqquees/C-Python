@@ -9,10 +9,10 @@
 int main()
 {
     char palavra[20];
-    char caracter;
-    int numero_caracter = 0;
+    char letra;
+    int contador_letra = 0;
 
-    printf("QUANTIDADE DE CARACTER\n");
+    printf("CONTADOR DE LETRA(S)\n");
 
     printf("\nDigite uma palavra: ");
     scanf("%s", palavra);
@@ -20,15 +20,15 @@ int main()
     // Limpar o buffer de entrada para evitar leitura incorreta do caracter.
     getchar();
 
-    printf("Digite o caracter: ");
-    scanf("%c", &caracter);
+    printf("Digite uma letra: ");
+    scanf("%c", &letra);
 
     for (int i = 0; i < strlen(palavra); i++)
     {
-        if (palavra[i] == caracter)
-            numero_caracter++;
+        if (palavra[i] == letra)
+            contador_letra++;
     }
-    printf("\nA palavra %s contem %d letra(s) %c.", palavra, numero_caracter, caracter);
+    printf("\nA palavra %s contem %d letra(s) %c.", palavra, letra, contador_letra);
 
     return 0;
 }

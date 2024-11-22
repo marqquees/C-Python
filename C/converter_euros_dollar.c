@@ -3,7 +3,6 @@
 float cambio_dollar(float valor_a_cambiar);
 float cambio_euro(float valor_a_cambiar);
 
-
 int main()
 {
     float valor_a_cambiar;
