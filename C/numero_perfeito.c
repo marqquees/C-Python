@@ -8,7 +8,7 @@ int main()
     int numero;
     printf("NUMERO PERFEITO\n");
 
-    printf("\nNumero Inteiro: ");
+    printf("\nNumero inteiro: ");
     scanf("%d", &numero);
 
     if (numero_perfeito(numero))
