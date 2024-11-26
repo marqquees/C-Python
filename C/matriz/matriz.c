@@ -2,20 +2,22 @@
 #define MAX_L 2
 #define MAX_C 2
 
-
 void leitura(int matriz[][MAX_C]);
-int media_diagonal(int matriz[][MAX_C]); 
-void superior_media(int matriz[][MAX_C], int mdiagonal);
+float media_diagonal(int matriz[][MAX_C]); 
+void superior_media(int matriz[][MAX_C], float mdiagonal);
+int ocorrencia(int matriz[][MAX_C], int matriz_ocorr[][2]);
 
 
 int main()
 {
     int matriz[MAX_L][MAX_C];
+    int matriz_ocorr[MAX_L * MAX_C][2];
     int mdiagonal = 0;
 
     leitura(matriz);
     mdiagonal = media_diagonal(matriz);
     superior_media(matriz, mdiagonal);
+    ocorrencia(matriz, matriz_ocorr);
 
     return 0;
 }
@@ -33,21 +35,18 @@ void leitura(int matriz[][MAX_C])
     }
 }
 
-int media_diagonal(int matriz[][MAX_C])
+float media_diagonal(int matriz[][MAX_C])
 {
-    int soma = 0;
+    float soma = 0, media = 0;
     for (int linha = 0; linha < MAX_L; linha++)
-    {   
-        for (int coluna = 0; coluna < MAX_C; coluna++)
-        {
-            if (linha == coluna)
-                soma += matriz[linha][coluna];
-        }
-    }
-    return printf("\nMedia: %d", soma / MAX_L);
+        soma += matriz[linha][linha];
+
+    media = soma / MAX_L;
+    printf("\nMedia: %.1f", media);
+    return media;
 }
 
-void superior_media(int matriz[][MAX_C], int m_diagonal)
+void superior_media(int matriz[][MAX_C], float m_diagonal)
 {
 
     int vetor[MAX_L * MAX_C];
@@ -60,11 +59,16 @@ void superior_media(int matriz[][MAX_C], int m_diagonal)
             {
                 vetor[indice] = matriz[linha][coluna];   
                 indice++;
-            }    
+            }
         }
     }
     
     printf("\nVetor: ");
     for (int i = 0; i < indice; i++)
-        printf("%d ", vetor[i]);
+        printf("%d | ", vetor[i]);
+}
+
+int ocorrencia(int matriz[][MAX_C], int matriz_ocorr[][2])
+{
+
 }
