@@ -20,7 +20,6 @@ int main()
 
     do
     {
-        
         printf("\n1. Maior");
         printf("\n2. Menor");
         printf("\n3. Media");

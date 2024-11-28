@@ -10,8 +10,8 @@ void ocorrencia(int matriz[][MAX_C], int matriz_ocorr[][2]);
 
 int main()
 {
-    int matriz[MAX_L][MAX_C];
-    int matriz_ocorr[MAX_L * MAX_C][2];
+    int matriz[MAX_L][MAX_C] = {0};
+    int matriz_ocorr[MAX_L * MAX_C][2] = {0};
     int mdiagonal = 0;
 
     leitura(matriz);
