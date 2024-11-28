@@ -11,3 +11,6 @@ git clone https://github.com/marqquees/Linguagem.git
 
 # Atualizar o repositório local com as últimas mudanças do repositório remoto.
 git pull origin main
+
+# Atualizar o repositório remoto com as últimas mudanças do repositório local.
+git push origin main

@@ -1,22 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif
 
 #define MAX 4
 
-void leitura(int vetor[]);
 void maior(int vetor[]);
 void menor(int vetor[]);
 void media(int vetor[]);
 void posicao(int vetor[]);
 void imprime(int vetor[]);
-void sair();
+void limpar_ecra();
 
 int main()
 {
     int vetor[MAX] = {0};
     int opcao;
-
-    leitura(vetor);
 
     do
     {
@@ -25,16 +29,24 @@ int main()
         printf("\n3. Media");
         printf("\n4. Posicao");
         printf("\n5. Imprimir os Valores");
-        printf("\n6. Sair");
-        printf("\n\nOpcao: ");
+        printf("\n6. Sair\n");
+        printf("\nOpcao: ");
         scanf("%d", &opcao);
 
+        if (opcao == 6)
+            break;
+        
+        printf("\nDigite %d valores inteiros.\n", MAX);
+        for (int i = 0; i < MAX; i++)
+        {
+            printf("Valor [%d]: ", i);
+            scanf("%d", &vetor[i]);
+        }
 
         switch (opcao)
         {
             case 1:
                 maior(vetor);
-                sair();
                 break;
             case 2:
                 menor(vetor);
@@ -49,25 +61,15 @@ int main()
                 imprime(vetor);
                 break;
             case 6:
-                sair();
                 break;
             default:
-                sair();
+                printf("Opcao invalida! Tente novamente.\n");
                 break;
         }
-    } while (opcao > 0 && opcao <= 6);
+        limpar_ecra();
+    } while (opcao != 6);
     
     return 0;
-}
-
-void leitura(int vetor[])
-{
-    printf("Digite %d valores inteiro.\n", MAX);
-    for (int i = 0; i < MAX; i++)
-    {
-        printf("Valor [%d]: ", i + 1);
-        scanf("%d", &vetor[i]);
-    }
 }
 
 void maior(int vetor[])
@@ -100,29 +102,47 @@ void media(int vetor[])
 void posicao(int vetor[])
 {
     int posicao, valor;
+    bool substituir = false;
 
-    printf("\n\nPosicao: ");
+    printf("\nPosicao (0 a %d): ", MAX - 1);
     scanf("%d", &posicao);
-    printf("\nValor que deseja [%d]: ", posicao);
-    scanf("%d", &valor);
-    vetor[posicao] = valor;
+
+    if (posicao >= 0 && posicao < MAX) 
+    {
+        printf("\nValor para substituir na posicao [%d]: ", posicao);
+        scanf("%d", &valor);
+        vetor[posicao] = valor;
+        substituir = true;
+    }
+    if (substituir)
+        imprime(vetor);
+    else
+        printf("Posicao invalida! Tente novamente.\n");
 }
 
 void imprime(int vetor[])
 {
+    printf("\nVetor: ");
     for (int i = 0; i < MAX; i++)
         printf("%d ", vetor[i]);
+    printf("\n");
 }
 
-void sair()
+void limpar_ecra()
 {
-    printf("\n\n[Enter] para continuar..."); 
-    //while (getchar() != '\n'); 
-    getchar();
+    // Delay de 3 segundos antes de limpar o ecrã.
+    #ifdef _WIN32
+        Sleep(3000);  // Sleep é em milissegundos, então 3000 = 3 segundos.
+    #else
+        sleep(3);  // sleep é em segundos no Unix.
+    #endif
+
+    //Limpa o ecrã.
     #ifdef _WIN32
         system("cls");
     #else
         system("clear");
     #endif
 }
-
+    
+    
