@@ -1,15 +1,25 @@
+/*
+    Conversor de Numerais Romanos.
+
+    Escreva um programa para converter um número em numeração romana para a notação decimal. 
+    Ex. MCMLXXIX = 1979.
+    Implemente um adequado tratamento de erros, que informe o utilizador, de forma clara, 
+    sobre o erro que cometeu na escrita do numeral romano, como por exemplo: "usou uma letra não permitida como o P".
+*/
+
 #include <stdio.h>
 #include <string.h>
+
 #define TAMANHO 10
 
 int romano_para_decimal(char c);
 
 int main()
 {
-    printf("Conversor de Numerais Romanos\n");
-
     char romano[TAMANHO];
     int decimal = 0;
+
+    printf("Conversor de Numerais Romanos\n");
     
     printf("\nNumeral Romano: ");
     scanf("%s", romano);

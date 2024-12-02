@@ -13,8 +13,8 @@ int main()
 {
     printf("WEIGHTED AVERAGE\n\n");
 
-    float nota_aluno[3];
-    char numero_ordinal[3][10] = {"first","second","third"};
+    float nota_aluno[3] = {0};
+    char numero_ordinal[3][6] = {"first","second","third"};
 
     int tamanho_vetor = sizeof(nota_aluno) / sizeof(nota_aluno[0]);
     for (int i = 0; i < tamanho_vetor; i++)

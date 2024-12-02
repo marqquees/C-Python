@@ -14,8 +14,8 @@ int main()
 {
     printf("AVERAGE STUDENT\n\n");
 
-    char nome_aluno[5][10];
-    float nota_aluno[5][3];
+    char nome_aluno[5][10] = {'0'};
+    float nota_aluno[5][3] = {0};
     int tamanho_vetor_nome_aluno = sizeof(nome_aluno) / sizeof(nome_aluno[0]);
     int numero_nota = sizeof(nota_aluno[0]) / sizeof(nota_aluno[0][0]);
 
