@@ -1,3 +1,16 @@
+/*
+    Criem um programa que leia dez números inteiro se permita ao utilizador escolher a opção pretendida.
+    
+    1. Maior número.
+    2. Menor número.
+    3. Média.
+    4. Altera um valor lido indicando a posição.
+    5. Imprimir o vetor com todos os valores inseridos.
+    6. Sair
+    
+    Cada uma das opções deve ser desenvolvida numa função à parte.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

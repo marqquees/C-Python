@@ -1,12 +1,13 @@
-print("SUM\n")
+def soma(numero1: float, numero2: float, numero3: float) -> float:
+    return numero1 + numero2 + numero3
 
-def sum(number1, number2, number3):
-    return number1 + number2 + number3
+print("SOMA\n")
 
-number = []
-sequence_number = ["first", "second", "third"]
+numero = []
+sequencia_numeros = ["primeiro", "segundo", "terceiro"]
 
 for i in range(3):
-    number.append(float(input(f"Enter the {sequence_number[i]} number: ")))
+    numero.append(float(input(f"Digite o {sequencia_numeros[i]} número: ")))
 
-print(f"\nThe sum of the three numbers is: {sum(number[0], number[1], number[2])}")
+print(f"\nSoma: {soma(numero[0], numero[1], numero[2])}")
+

@@ -6,7 +6,7 @@ int main()
 {
     printf("MENOR NUMERO\n\n");
 
-    float numero[5];
+    float numero[5] = {0};
     char nomes_numero[5][10] = {"primeiro","segundo","terceiro","quarto","quinto"};
     int tamanho_vetor = sizeof(numero) / sizeof(numero[0]);
 
@@ -23,12 +23,10 @@ int main()
 
 float menor_numero(float numero[], int tamanho_vetor)
 {
-    //calcula o menor número.
+    //Calcula o menor número.
     float menor = numero[0];
     for (int i = 1; i < tamanho_vetor; i++)
-    {
         if (numero[i] < menor)
             menor = numero[i];
-    }
     return menor;
 }

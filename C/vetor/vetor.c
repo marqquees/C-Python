@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define TAMANHO 3
 
+#define TAMANHO 3
 
 void imprime(int vetor[], int tamanho_vetor);
 void digite(int vetor[], int tamanho_vetor);
@@ -15,9 +14,7 @@ int main()
 
     digite(vetor, tamanho_vetor);
     imprime(vetor, tamanho_vetor);
-    printf("\n");
     diferenca(vetor, tamanho_vetor);
-    printf("\n");
     par_impar(vetor, tamanho_vetor);
 
     return 0;
@@ -62,11 +59,13 @@ void diferenca(int vetor[], int tamanho_vetor)
 
 void par_impar(int vetor[], int tamanho_vetor)
 {
+    printf("\nPar: ");
     for (int i = 0; i < tamanho_vetor; i++)
-    {
         if (vetor[i] % 2 == 0)
-            printf("\nPar: (%d)", vetor[i]);
-        else
-            printf("\nImpar: (%d)", vetor[i]);
-    }
+            printf("%d ", vetor[i]);
+            
+    printf("\nImpar: ");
+    for (int i = 0; i < tamanho_vetor; i++)
+        if (vetor[i] % 2 != 0)
+            printf("%d ", vetor[i]);
 }

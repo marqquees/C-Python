@@ -1,3 +1,19 @@
+/*
+    Escrevam um programa que leia a altura e largura de um retângulo, 
+    verifique se é um quadrado (ou seja, Largura = Altura) e imprima (“É um quadrado.") no caso de ser e não imprima nada no caso de não ser. 
+    
+    Alterem o programa para imprimir ("É um retângulo") no caso dos lados não serem iguais. 
+    
+    Alterem outra vez o programa para no caso dos lados não serem iguais e
+    verificar se a largura é maior que a altura ou se a altura é maior do que a largura e emitir essa informação ao utilizador. 
+    
+    Alterem de novo o programa desta vez para alterar dois retângulos e executar o código desenvolvido para cada um deles, 
+    no final devemos ainda imprimir qual deles tem uma área maior. 
+    
+    Por fim, alterem o programa para que o utilizador indique quantos retângulos pretende introduzir (até 5),
+    leiam todos esses retângulos e guardem o lado e a altura e a área numa matriz [5][3], antes de executarem o código para cada um deles. 
+*/
+
 #include <stdio.h>
 
 #define MAX_L 5
