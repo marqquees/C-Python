@@ -1,1 +1,1 @@
-"# Linguagem C e Python" 
+"# Linguagem C, SQL e Python." 
