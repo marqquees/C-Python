@@ -23,6 +23,7 @@
 
 #define MAX 4
 
+void leitura(int vetor[]);
 void maior(int vetor[]);
 void menor(int vetor[]);
 void media(int vetor[]);
@@ -33,60 +34,59 @@ void limpar_ecra();
 int main()
 {
     int vetor[MAX] = {0};
-    int opcao;
+    int opcao = 0;
 
-    do
+    printf("\n1. Maior");
+    printf("\n2. Menor");
+    printf("\n3. Media");
+    printf("\n4. Posicao");
+    printf("\n5. Imprimir os Valores");
+    printf("\n6. Sair\n");
+    printf("\nOpcao: ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
     {
-        printf("\n1. Maior");
-        printf("\n2. Menor");
-        printf("\n3. Media");
-        printf("\n4. Posicao");
-        printf("\n5. Imprimir os Valores");
-        printf("\n6. Sair\n");
-        printf("\nOpcao: ");
-        scanf("%d", &opcao);
-
-        if (opcao == 6)
+        case 1:
+            maior(vetor);
             break;
-        
-        printf("\nDigite %d valores inteiros.\n", MAX);
-        for (int i = 0; i < MAX; i++)
-        {
-            printf("Valor [%d]: ", i);
-            scanf("%d", &vetor[i]);
+        case 2:
+            menor(vetor);
+            break;
+        case 3:
+            media(vetor);
+            break;
+        case 4: 
+            posicao(vetor);
+            break;
+        case 5:
+            imprime(vetor);
+            break;
+        case 6:
+            break;
+        default:
+            printf("Opcao invalida! Tente novamente.\n");
+            break;
         }
 
-        switch (opcao)
-        {
-            case 1:
-                maior(vetor);
-                break;
-            case 2:
-                menor(vetor);
-                break;
-            case 3:
-                media(vetor);
-                break;
-            case 4: 
-                posicao(vetor);
-                break;
-            case 5:
-                imprime(vetor);
-                break;
-            case 6:
-                break;
-            default:
-                printf("Opcao invalida! Tente novamente.\n");
-                break;
-        }
-        limpar_ecra();
-    } while (opcao != 6);
-    
+    limpar_ecra();
     return 0;
+}
+
+void leitura(int vetor[])
+{
+    printf("\nDigite %d valores inteiros.\n", MAX);
+    for (int i = 0; i < MAX; i++)
+    {
+        printf("Valor [%d]: ", i);
+        scanf("%d", &vetor[i]);
+    }
 }
 
 void maior(int vetor[])
 {
+    leitura(vetor);
+
     int maior = vetor[0];
     for (int i = 1; i < MAX; i++)
         if (vetor[i] > maior)
@@ -96,6 +96,8 @@ void maior(int vetor[])
 
 void menor(int vetor[])
 {
+    leitura(vetor);
+
     int menor = vetor[0];
     for (int i = 1; i < MAX; i++)
         if (vetor[i] < menor)
@@ -106,6 +108,8 @@ void menor(int vetor[])
 void media(int vetor[])
 {
     float soma = 0, media;
+
+    leitura(vetor);
     for (int i = 0; i < MAX; i++)
         soma += vetor[i];
     media = soma / MAX;
@@ -117,6 +121,7 @@ void posicao(int vetor[])
     int posicao, valor;
     bool substituir = false;
 
+    leitura(vetor);
     printf("\nPosicao (0 a %d): ", MAX - 1);
     scanf("%d", &posicao);
 
@@ -141,13 +146,15 @@ void imprime(int vetor[])
     printf("\n");
 }
 
-void limpar_ecra()
+void limpar_ecra(void)
 {
     // Delay de 3 segundos antes de limpar o ecrã.
     #ifdef _WIN32
-        Sleep(3000);  // Sleep é em milissegundos, então 3000 = 3 segundos.
+        // Sleep é em milissegundos, então 3000 é igual a 3 segundos.
+        Sleep(3000);  
     #else
-        sleep(3);  // sleep é em segundos no Unix.
+        // sleep é em segundos no Unix.
+        sleep(3);  
     #endif
 
     //Limpa o ecrã.

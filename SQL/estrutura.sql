@@ -121,4 +121,3 @@ ADD CONSTRAINT `FKAgencia1`
   REFERENCES `imobiliario`.`rede_agencia` (`IDRede`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
-
