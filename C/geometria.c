@@ -4,68 +4,55 @@
 
 const float PI = 3.1415;
 
-void menu(void);
-float area(float raio);
-float perimetro(float raio);
-void limpa_ecra(void);
+void perimetro(void);
+void area(void);
 
-
-int main()
+int main(void)
 {
-    float raio = 0;
-    int op;
+    int opcao = 0;
 
-    printf("PERIMETRO/AREA de CIRCUFERENCIA\n");
-    menu();
-    scanf("%d", &op);
+    puts("Geometria\n");
 
-    while (op != 1 && op != 2)
+    puts("1. Perimetro");
+    puts("2. Area");
+    puts("3. Sair");
+    printf("\nO que deseja calcular? ");
+    scanf("%d", &opcao);
+
+    switch (opcao)
     {
-        limpa_ecra();
-        printf("\nDigite uma opcao valida (1 ou 2).\n");
-        menu();
-        scanf("%d", &op);
-    }
-    switch (op)
-    {
-        case 1:
-            limpa_ecra();
-            printf("Raio: ", raio);
-            scanf("%f", &raio);
-            printf("Perimetro: %.3f", perimetro(raio));
-            break;
-        case 2:
-            limpa_ecra();
-            printf("Raio: ", raio);
-            scanf("%f", &raio);
-            printf("Area: %.3f", area(raio));
-            break;
+    case 1:
+        perimetro();
+        break;
+    case 2:
+        area();
+        break;
+    case 3:
+        exit(0);
+        break;
+    default:
+        puts("Opcao invalida. Digite novamente.");
+        break;
     }
     return 0;
 }
 
-void menu(void)
+void perimetro(void)
 {
-    printf("\n1. Perimetro");
-    printf("\n2. Area");
-    printf("\nO que deseja calcular? ");
+    float raio = 0;
+
+    printf("\nRaio: ");
+    scanf("%f", &raio);
+    printf("Perimetro: %.2f", pow(PI, 2) * raio);
 }
 
-float area(float raio)
+void area(void)
 {
-    return PI * pow(raio, 2);
-}
+    float lado_a = 0, lado_b = 0;
 
-float perimetro(float raio)
-{
-    return pow(PI, 2) * raio;
-}
-
-void limpa_ecra(void)
-{
-    #ifdef _WIN32 //diretiva de pré-processador.
-        system("cls");
-    #else
-        system("clear");
-    #endif
+    printf("\nLado A: ");
+    scanf("%f", &lado_a);
+    printf("Lado B: ");
+    scanf("%f", &lado_b);
+    printf("Area: %.2f", lado_a * lado_b);
 }

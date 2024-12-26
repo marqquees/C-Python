@@ -4,23 +4,15 @@
 #include <stdio.h>
 #include <string.h>
 
-int numero_letra(char palavra[]);
-
-int main()
+int main(void)
 {
     char palavra[20];
 
-    printf("QUANTAS CARACTERE(S)?\n");
+    puts("Numero de Caracteres\n");
 
-    printf("\nDigite uma palavra: ");
-    scanf("%s", palavra);
+    printf("Digite uma palavra: ");
+    scanf("%s", &palavra);
 
-    printf("\nA palavra %s tem %d letra(s).", palavra, numero_letra(palavra));
+    printf("\nA palavra %s tem %d letras.", palavra, strlen(palavra));
     return 0;
-}
-
-int numero_letra(char palavra[])
-{
-    int n_letra = strlen(palavra);
-    return n_letra;
 }

@@ -1,8 +1,8 @@
-# Exclui todos os erquivos executáveis.
+# Exclui todos os arquivos executáveis.
 *.exe
+*.txt
+*.gitignore
+*Manual GIT.txt
 
 # Exclui o diretório output.
-C\output
-C\vetor\output
-C\media_aluno\output
-C\palavra\output
+\output

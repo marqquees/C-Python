@@ -2,12 +2,12 @@
 
 float maior_numero(float numero[], int tamanho_vetor);
 
-int main()
+int main(void)
 {
-    printf("MAIOR NUMERO\n\n");
+    puts("MAIOR NUMERO\n");
 
     float numero[5] = {0};
-    char nomes_numero[5][10] = {"primeiro","segundo","terceiro","quarto","quinto"};
+    char nomes_numero[5][10] = {"primeiro", "segundo", "terceiro", "quarto", "quinto"};
     int tamanho_vetor = sizeof(numero) / sizeof(numero[0]);
 
     for (int i = 0; i < tamanho_vetor; i++)
@@ -23,7 +23,6 @@ int main()
 
 float maior_numero(float numero[], int tamanho_vetor)
 {
-    //Calcula o maior número.
     float maior = numero[0];
     for (int i = 1; i < tamanho_vetor; i++)
         if (numero[i] > maior)

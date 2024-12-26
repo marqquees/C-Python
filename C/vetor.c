@@ -7,9 +7,9 @@ void digite(int vetor[], int tamanho_vetor);
 void diferenca(int vetor[], int tamanho_vetor);
 void par_impar(int vetor[], int tamanho_vetor);
 
-int main()
+int main(void)
 {
-    int vetor[TAMANHO];
+    int vetor[TAMANHO] = {0};
     int tamanho_vetor = sizeof(vetor) / sizeof(vetor[0]);
 
     digite(vetor, tamanho_vetor);
@@ -37,7 +37,6 @@ void imprime(int vetor[], int tamanho_vetor)
         printf("%d ", vetor[i]);
 }
 
-
 void diferenca(int vetor[], int tamanho_vetor)
 {
     int maior_numero = 0;
@@ -59,12 +58,12 @@ void diferenca(int vetor[], int tamanho_vetor)
 
 void par_impar(int vetor[], int tamanho_vetor)
 {
-    printf("\nPar: ");
+    puts("\nPar: ");
     for (int i = 0; i < tamanho_vetor; i++)
         if (vetor[i] % 2 == 0)
             printf("%d ", vetor[i]);
-            
-    printf("\nImpar: ");
+
+    puts("\nImpar: ");
     for (int i = 0; i < tamanho_vetor; i++)
         if (vetor[i] % 2 != 0)
             printf("%d ", vetor[i]);

@@ -6,23 +6,3 @@
     Considere apenas palíndromos de comprimentos entre 3 e 10 caracteres.
 */
 
-#include <stdio.h>
-
-
-
-char ePolidromo () {
-
-}
-
-char naoEPolidromo () {
-
-}
-
-
-int main(int argc, char const *argv[])
-{
-    
-    
-    return 0;
-}
-

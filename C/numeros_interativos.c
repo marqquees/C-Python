@@ -1,13 +1,13 @@
 /*
     Criem um programa que leia dez números inteiro se permita ao utilizador escolher a opção pretendida.
-    
+
     1. Maior número.
     2. Menor número.
     3. Média.
     4. Altera um valor lido indicando a posição.
     5. Imprimir o vetor com todos os valores inseridos.
     6. Sair
-    
+
     Cada uma das opções deve ser desenvolvida numa função à parte.
 */
 
@@ -29,24 +29,26 @@ void menor(int vetor[]);
 void media(int vetor[]);
 void posicao(int vetor[]);
 void imprime(int vetor[]);
-void limpar_ecra();
+void limpa_ecra();
 
-int main()
+int main(void)
 {
     int vetor[MAX] = {0};
     int opcao = 0;
 
-    printf("\n1. Maior");
-    printf("\n2. Menor");
-    printf("\n3. Media");
-    printf("\n4. Posicao");
-    printf("\n5. Imprimir os Valores");
-    printf("\n6. Sair\n");
-    printf("\nOpcao: ");
-    scanf("%d", &opcao);
-
-    switch (opcao)
+    do
     {
+        puts("NUMEROS INTERATIVOS\n");
+        puts("1. Maior");
+        puts("2. Menor");
+        puts("3. Media");
+        puts("4. Posicao");
+        puts("5. Sair");
+        printf("\nOpcao: ");
+        scanf_s("%d", &opcao);
+
+        switch (opcao)
+        {
         case 1:
             maior(vetor);
             break;
@@ -56,20 +58,18 @@ int main()
         case 3:
             media(vetor);
             break;
-        case 4: 
+        case 4:
             posicao(vetor);
             break;
         case 5:
-            imprime(vetor);
-            break;
-        case 6:
             break;
         default:
-            printf("Opcao invalida! Tente novamente.\n");
+            puts("Opcao invalida! Tente novamente.\n");
             break;
         }
+        limpa_ecra();
+    } while (opcao != 5);
 
-    limpar_ecra();
     return 0;
 }
 
@@ -86,7 +86,6 @@ void leitura(int vetor[])
 void maior(int vetor[])
 {
     leitura(vetor);
-
     int maior = vetor[0];
     for (int i = 1; i < MAX; i++)
         if (vetor[i] > maior)
@@ -97,7 +96,6 @@ void maior(int vetor[])
 void menor(int vetor[])
 {
     leitura(vetor);
-
     int menor = vetor[0];
     for (int i = 1; i < MAX; i++)
         if (vetor[i] < menor)
@@ -107,9 +105,8 @@ void menor(int vetor[])
 
 void media(int vetor[])
 {
-    float soma = 0, media;
-
     leitura(vetor);
+    float soma = 0, media = 0;
     for (int i = 0; i < MAX; i++)
         soma += vetor[i];
     media = soma / MAX;
@@ -118,14 +115,14 @@ void media(int vetor[])
 
 void posicao(int vetor[])
 {
-    int posicao, valor;
+    leitura(vetor);
+    int posicao = 0, valor = 0;
     bool substituir = false;
 
-    leitura(vetor);
     printf("\nPosicao (0 a %d): ", MAX - 1);
     scanf("%d", &posicao);
 
-    if (posicao >= 0 && posicao < MAX) 
+    if (posicao >= 0 && posicao < MAX)
     {
         printf("\nValor para substituir na posicao [%d]: ", posicao);
         scanf("%d", &valor);
@@ -135,34 +132,33 @@ void posicao(int vetor[])
     if (substituir)
         imprime(vetor);
     else
-        printf("Posicao invalida! Tente novamente.\n");
+        puts("Posicao invalida! Tente novamente.");
+    // Falta loop de verificação.
 }
 
 void imprime(int vetor[])
 {
-    printf("\nVetor: ");
+    puts("\nVetor: ");
     for (int i = 0; i < MAX; i++)
         printf("%d ", vetor[i]);
-    printf("\n");
+    puts("");
 }
 
-void limpar_ecra(void)
+void limpa_ecra()
 {
-    // Delay de 3 segundos antes de limpar o ecrã.
-    #ifdef _WIN32
-        // Sleep é em milissegundos, então 3000 é igual a 3 segundos.
-        Sleep(3000);  
-    #else
-        // sleep é em segundos no Unix.
-        sleep(3);  
-    #endif
+// Delay de 3 segundos antes de limpar o ecrã.
+#ifdef _WIN32
+    // Sleep é em milissegundos, então 3000 é igual a 3 segundos.
+    Sleep(3000);
+#else
+    // sleep é em segundos no Unix.
+    sleep(3);
+#endif
 
-    //Limpa o ecrã.
-    #ifdef _WIN32
-        system("cls");
-    #else
-        system("clear");
-    #endif
+// Limpa o ecrã.
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }
-    
-    

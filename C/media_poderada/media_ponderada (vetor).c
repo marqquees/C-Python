@@ -9,22 +9,21 @@ const float peso[3] = {0.4, 0.4, 0.2};
 
 float media_ponderada(int tamanho_vetor, float nota_aluno[]);
 
-int main()
+int main(void)
 {
-    printf("WEIGHTED AVERAGE\n\n");
+    puts("Media Ponderada do Aluno\n");
 
     float nota_aluno[3] = {0};
     char numero_ordinal[3][6] = {"first","second","third"};
-
     int tamanho_vetor = sizeof(nota_aluno) / sizeof(nota_aluno[0]);
+    
     for (int i = 0; i < tamanho_vetor; i++)
     {
-        printf("Enter a %s number: ",numero_ordinal[i]);
+        printf("Digite a %s nota: ",numero_ordinal[i]);
         scanf("%f",&nota_aluno[i]);
     }
 
-    //cálculo da média ponderada.
-    printf("\nThe weighted average is %.1f", media_ponderada(tamanho_vetor, nota_aluno));
+    printf("\nA media ponderada e %.1f", media_ponderada(tamanho_vetor, nota_aluno));
 
     return 0;
 }

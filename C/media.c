@@ -2,27 +2,25 @@
 
 float media(float n1, float n2);
 
-int main()
+int main(void)
 {
-    printf("MEDIA\n");
-    
-    float number1, number2, resultado;
+    float nota1 = 0, nota2 = 0, resultado = 0;
 
-    printf("\nNota 1: ");
-    scanf("%f", &number1);
+    puts("Media\n");
+
+    printf("Nota 1: ");
+    scanf("%f", &nota1);
     printf("Nota 2: ");
-    scanf("%f", &number2);
+    scanf("%f", &nota2);
 
-    resultado = media(number1, number2);
-
-    if (resultado >= 10)
-        printf("\nAPROVADO");
+    if (media(nota1, nota2) >= 10)
+        puts("\nAPROVADO");
     else
-        printf("\nREPROVADO");
+        puts("\nREPROVADO");
     return 0;
 }
 
-float media(float n1, float n2) 
+float media(float n1, float n2)
 {
     return (n1 + n2) / 2;
 }
