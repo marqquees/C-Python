@@ -146,19 +146,14 @@ void imprime(int vetor[])
 
 void limpa_ecra()
 {
-// Delay de 3 segundos antes de limpar o ecrã.
+// Delay de 3 segundos e limpa o ecrã.
 #ifdef _WIN32
     // Sleep é em milissegundos, então 3000 é igual a 3 segundos.
     Sleep(3000);
+    system("cls");
 #else
     // sleep é em segundos no Unix.
     sleep(3);
-#endif
-
-// Limpa o ecrã.
-#ifdef _WIN32
-    system("cls");
-#else
     system("clear");
 #endif
 }
