@@ -1,5 +1,7 @@
 # Atualizar o repositório local com as últimas mudanças do repositório remoto.
 git pull origin main
+git pull origin
 
 # Atualizar o repositório remoto com as últimas mudanças do repositório local.
 git push origin main
+git push origin

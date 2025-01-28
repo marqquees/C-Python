@@ -2,7 +2,8 @@
 *.exe
 *.txt
 *.gitignore
-*Manual GIT.txt
+*.teste.c
+*.teste.py
 
 # Exclui o diretório output.
 \output

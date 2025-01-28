@@ -11,15 +11,15 @@ A hipótese é definida da seguinte forma:
 5. A hipótese diz que, para qualquer número inteiro positivo que você escolher, você eventualmente chegará a 1.
 """
 
-contador_etapas = 0
-c0 = int(input("Digite um número: "))
+etapas = 0
+numero = int(input("Digite um número inteiro positivo: "))
 
-while c0 != 1:
-    if c0 % 2 == 0:
-        c0 = c0 / 2
+while numero != 1:
+    if numero % 2 == 0:
+        numero = numero / 2
     else:
-        c0 = 3 * c0 + 1
-    contador_etapas += 1
-    print(c0)
+        numero = numero * 3 + 1
+    etapas += 1
+    print(numero)
 
-print("Número de Etapas:", contador_etapas)
+print(f"\nEtapas necessárias: {etapas:.0f}")

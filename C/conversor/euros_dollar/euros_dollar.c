@@ -41,7 +41,6 @@ void cambio_dollar(void)
     scanf("%f", &valor_a_cambiar);
 
     resultado = valor_a_cambiar * dollar;
-
     printf("\n%.2f cambiado para o Dollar: %.2f", valor_a_cambiar, resultado);
 }
 
@@ -53,6 +52,5 @@ void cambio_euro(void)
     scanf("%f", &valor_a_cambiar);
 
     resultado = valor_a_cambiar * euro;
-
     printf("\n%.2f cambiado para o Euro: %.2f", valor_a_cambiar, resultado);
 }
