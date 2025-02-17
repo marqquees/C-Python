@@ -7,12 +7,12 @@ Dado um número de blocos, o programa calcula a altura da pirâmide plana (2D) e
 bloco = int(input("Número de Bloco(s): "))
 altura = 0 
 
-while altura >= 0:
-    altura += 1
-    bloco -= altura
+while altura < bloco:
+    altura = altura + 1
+    bloco = bloco - altura
     if bloco < 0:
-        altura -= 1
+        altura = altura - 1
         break
 
 print(f"Altura da Pirâmide: {altura}")
-print(f"Bloco(s) restante(s): {bloco * -1}")
+print(f"Bloco(s) restante(s): {bloco}")
