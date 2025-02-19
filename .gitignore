@@ -2,8 +2,8 @@
 *.exe
 *.txt
 *.gitignore
-*.teste.c
-*.teste.py
+*teste.c
+*teste.py
 
 # Exclui o diretório output.
 \output

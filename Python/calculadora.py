@@ -1,10 +1,6 @@
-import os
-
 def limpar():
-    if os.name == "nt":
-        os.system("cls")
-    else:
-        os.system("clear")
+    import os
+    os.system("cls" if os.name == "nt" else "clear")
 
 def soma(a, b): 
     return a + b
@@ -28,12 +24,14 @@ def calculadora(opcao):
     if opcao < 1 or opcao > 5:
         print("Opção inválida.")
         limpar()
-        principal()
+        menu()
     else:
         numero = []
         sequencia = ["primeiro", "segundo"]
+
         for i in range(2):
             numero.append(float(input(f"Digite o {sequencia[i]} número: ")))
+
         if opcao == 1:
             print(f"\nA soma de {numero[0]} mais {numero[1]} é de {soma(numero[0], numero[1])}") 
         elif opcao == 2: 
@@ -45,7 +43,7 @@ def calculadora(opcao):
         elif opcao == 5: 
             print(f"\nA potenciação de {numero[0]} elevado a {numero[1]} é de {potenciacao(numero[0], numero[1])}")
         
-def principal():
+def menu():
     print("CALCULADORA\n")
     print("1. Soma")
     print("2. Subtração")
@@ -53,8 +51,9 @@ def principal():
     print("4. Divisão")
     print("5. Potenciação")
     opcao = int(input("\nDigite a operação desejada: "))
+
     limpar()
     calculadora(opcao)
 
 if __name__ == "__main__":
-    principal()
+    menu()
