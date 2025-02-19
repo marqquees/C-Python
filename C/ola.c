@@ -3,11 +3,11 @@
 int main(int argc, char *argv[])
 {
     if (argc == 1)
-        puts("Hello!\n");
+        puts("Ola!\n");
     else
     {
         for (int i = 1; i < argc; i++)
-            printf("Hello %s\n", argv[i]);      
+            printf("Ola %s\n", argv[i]);      
     }
     return 0; 
 }
